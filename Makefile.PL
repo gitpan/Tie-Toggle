@@ -1,8 +1,30 @@
+# $Id: Makefile.PL,v 1.5 2002/12/17 18:48:41 comdog Exp $
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+
+sub ExtUtils::MM_Any::test_via_harness
+		{
+		my($self, $perl, $tests) = @_;
+
+		return qq|\t$perl "-MTest::Manifest" | .
+			qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
+			qq|'\$(INST_ARCHLIB)')"\n|;
+		}
+
 WriteMakefile(
-    'NAME'		=> 'Tie::Toggle',
-    'VERSION_FROM'	=> 'Toggle.pm', # finds $VERSION
-    'PREREQ_PM'		=> {'Tie::Cycle' => 0}, # e.g., Module::Name => 1.1
-);
+    'NAME'		    => 'Tie::Toggle',
+    'VERSION_FROM'	=> 'Toggle.pm',
+
+    'PREREQ_PM'		=> {
+		'File::Find::Rule' => '0',
+		'Test::Manifest'   => '0.91',
+		'Test::More'       => '0',
+		'Test::Pod'        => '0.90',
+    	'Tie::Cycle'       => '1.05',
+    	},
+    
+    'MAN3PODS'      => {
+    	'Toggle.pm'  => '$(INST_MAN3DIR)/Tie::Toggle.3',
+    	},
+    	
+    'clean' => { FILES => 'Tie-Toggle-*' },
+	);
