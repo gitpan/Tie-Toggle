@@ -6,7 +6,7 @@ use warnings;
 
 use Tie::Cycle;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 our @ISA     = qw(Tie::Cycle);
 
 sub TIESCALAR
