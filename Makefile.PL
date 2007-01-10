@@ -1,23 +1,12 @@
-# $Id: Makefile.PL,v 1.6 2004/09/08 00:25:41 comdog Exp $
+# $Id: Makefile.PL,v 1.7 2007/01/10 04:57:59 comdog Exp $
 use ExtUtils::MakeMaker;
 
-eval "use Test::Manifest";
-
-unless( $@ )
-	{
-	* ExtUtils::MM_Any::test_via_harness = sub
-		{
-		my($self, $perl, $tests) = @_;
-		
-		return qq|\t$perl "-MTest::Manifest" | .
-			qq|"-e" "run_t_manifest(\$(TEST_VERBOSE), '\$(INST_LIB)', | .
-			qq|'\$(INST_ARCHLIB)')"\n|;
-		}
-	}
+eval "use Test::Manifest 1.14";
 	
 WriteMakefile(
 	'NAME'		    => 'Tie::Toggle',
 	'VERSION_FROM'	=> 'Toggle.pm',
+	'LICENSE'       => 'perl',
 
 	'PREREQ_PM'		=> {
 		'Test::More'       => '0',

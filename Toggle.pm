@@ -1,4 +1,4 @@
-# $Id: Toggle.pm,v 1.6 2006/05/18 02:11:38 comdog Exp $
+# $Id: Toggle.pm,v 1.7 2007/01/10 04:57:59 comdog Exp $
 package Tie::Toggle;
 use strict;
 
@@ -7,7 +7,7 @@ use vars qw( $VERSION );
 
 use Tie::Cycle;
 
-$VERSION = sprintf "%d.%02d", q$Revision: 1.6 $ =~ m/ (\d+) \. (\d+) /xg;
+$VERSION = sprintf "%d.%02d", q$Revision: 1.7 $ =~ m/ (\d+) \. (\d+) /xg;
 
 sub TIESCALAR
 	{
@@ -64,11 +64,12 @@ members of the project can shepherd this module appropriately.
 
 brian d foy, C<< <bdfoy@cpan.org> >>.
 
-=head1 COPYRIGHT and LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 2000-2006, brian d foy, All rights reserved
+Copyright (c) 2000-2007 brian d foy.  All rights reserved.
 
-This software is available under the same terms as perl.
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 
