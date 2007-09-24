@@ -1,4 +1,4 @@
-# $Id: Toggle.pm,v 1.7 2007/01/10 04:57:59 comdog Exp $
+# $Id: Toggle.pm 2255 2007-04-17 18:37:37Z comdog $
 package Tie::Toggle;
 use strict;
 
@@ -7,7 +7,9 @@ use vars qw( $VERSION );
 
 use Tie::Cycle;
 
-$VERSION = sprintf "%d.%02d", q$Revision: 1.7 $ =~ m/ (\d+) \. (\d+) /xg;
+#$VERSION = sprintf "%d.%02d", q$Revision: 2255 $ =~ m/ (\d+) \. (\d+) /xg;
+
+$VERSION = 1.08;
 
 sub TIESCALAR
 	{

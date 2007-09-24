@@ -1,4 +1,4 @@
-# $Id: toggle.t,v 1.2 2002/12/17 18:39:02 comdog Exp $
+# $Id: toggle.t 761 2002-12-17 18:39:02Z comdog $
 
 use Test::More tests => 6;
 
